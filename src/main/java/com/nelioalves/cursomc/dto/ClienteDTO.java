@@ -8,7 +8,9 @@ import javax.validation.constraints.NotEmpty;
 import org.hibernate.validator.constraints.Length;
 
 import com.nelioalves.cursomc.domain.Cliente;
+import com.nelioalves.cursomc.services.validation.ClienteInsert;
 
+@ClienteInsert
 public class ClienteDTO implements Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -22,6 +24,9 @@ public class ClienteDTO implements Serializable {
 	@NotEmpty(message="Preenchimento obrigatório")
 	@Email(message="Email inválido")
 	private String email;
+	
+	@NotEmpty(message="Preenchimento obrigatório")
+	private String cpfOuCnpj;
 	
 	public ClienteDTO() {
 	}
